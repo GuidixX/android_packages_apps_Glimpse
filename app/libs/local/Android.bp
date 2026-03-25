@@ -1,0 +1,22 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Optional local FFmpeg decoder extension module.
+android_library_import {
+    name: "Glimpse_androidx.media3_media3-decoder-ffmpeg",
+    aars: ["media3-decoder-ffmpeg.aar"],
+    sdk_version: "36",
+    min_sdk_version: "30",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    static_libs: [
+        "androidx.annotation_annotation",
+        "Glimpse_androidx.media3_media3-common",
+        "Glimpse_androidx.media3_media3-decoder",
+        "Glimpse_androidx.media3_media3-exoplayer",
+    ],
+}

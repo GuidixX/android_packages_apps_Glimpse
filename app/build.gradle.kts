@@ -63,6 +63,8 @@ android {
 }
 
 dependencies {
+    val localMedia3DecoderFfmpegAar = file("libs/local/media3-decoder-ffmpeg.aar")
+
     implementation(libs.adobe.xmpcore)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)
@@ -89,6 +91,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.okhttp)
     implementation(libs.zoomimage.view.glide)
+    implementation(files(localMedia3DecoderFfmpegAar))
 }
 
 configure<GenerateBpPluginExtension> {
