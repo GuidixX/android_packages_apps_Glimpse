@@ -538,7 +538,11 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
                     false -> 0L
                 }
 
-                viewModel.setCurrentVideoUri(media.uri, startPositionMs)
+                viewModel.setCurrentVideoUri(
+                    media.uri,
+                    media.mimeType,
+                    startPositionMs,
+                )
             }
         } else {
             saveCurrentVideoPosition()

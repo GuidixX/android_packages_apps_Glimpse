@@ -344,9 +344,18 @@ class LocalPlayerViewModel(
         _fullscreenMode.value = _fullscreenMode.value.not()
     }
 
-    fun setCurrentVideoUri(uri: Uri, startPositionMs: Long = 0L) {
+    fun setCurrentVideoUri(
+        uri: Uri,
+        mimeType: String? = null,
+        startPositionMs: Long = 0L,
+    ) {
         exoPlayer.apply {
-            setMediaItem(MediaItem.fromUri(uri))
+            setMediaItem(
+                MediaItem.Builder()
+                    .setUri(uri)
+                    .setMimeType(mimeType)
+                    .build()
+            )
             prepare()
             if (startPositionMs > 0L) {
                 seekTo(startPositionMs)
